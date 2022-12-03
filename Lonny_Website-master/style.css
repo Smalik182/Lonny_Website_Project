@@ -1,0 +1,349 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family:'Roboto', sans-serif;
+    
+
+}
+
+body,html {
+    background-color: black;
+    overflow-x: hidden;
+    margin:0;
+    scroll-behavior: smooth;
+    
+}
+
+
+
+
+/***********************************Nav Bar*******************************/
+nav {
+    position: sticky;
+    display:flex;
+    top: 0;
+    min-height: 6vh;
+    z-index: 10;
+    background: black;
+}
+
+.nav-links {
+    position: sticky;
+    left: 68%;
+    display: flex;
+    justify-content: space-around;
+    width: 30%;
+    padding-top: 15px; 
+}
+
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 13px;
+    font-weight: lighter;
+    margin-bottom: 30px;
+    
+}
+
+
+.menu-num1 {
+    margin-left: 40px;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.menu-num2 {
+    margin-left: 49px;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    
+}
+
+
+.menu-num3 {
+    margin-left: 63px;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    
+}
+
+.menu-num4 {
+    margin-left: 40px;
+    font-size: 9px;
+    font-weight: bold;
+    color: white;
+    
+}
+
+
+.social-media-links {
+    
+    display: flex;
+    color: white;
+    font-size: 45px;
+    position: relative;
+    right: 15px;
+    top: 14px;
+    opacity: .9;
+    width: 15%;
+    justify-content: space-around;
+}
+
+/***********************************Home Page*******************************/
+
+.full-screen-video-container {
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: left;
+    align-items: flex-start;
+}
+
+.full-screen-video-container video {
+    object-fit: fill;
+    position: absolute;
+    width: auto;
+    height: auto;
+    min-width: 100%;
+    min-height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+
+.full-screen-video-content {
+    color: white;
+    position: relative;
+    top: 50%;
+    left: 5%;
+    
+}
+
+
+.full-screen-video-content {  
+    font-size: 200px;
+    font-weight: bold;
+    color: white; 
+    
+}
+
+@media (max-width: 425px) {
+    .full-screen-video-content {
+        font-size: 80px;
+        left: 0;
+        top: 550px;
+    }
+
+    .full-screen-video-container video {
+    
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+    }
+    
+}
+
+
+
+/***********************************Gallery Page*******************************/
+
+.middle-container {
+    position: relative;
+    display: flex;
+    
+     
+}
+
+.middle-container section {
+    display: grid;
+    min-width: 100%;
+    height: auto;
+    height: 100vh;
+    
+}
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 80px;
+    
+}
+
+
+
+.title h1 {
+    color: white;
+    font-family: tangerine;
+    font-size: 65px;
+}
+
+.event-date {
+    margin-top: 50px;
+}
+
+.title h3 {
+    color: white;
+    font-family: tangerine;
+    font-size: 25px;
+}
+
+.video {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    
+    
+    
+    
+}
+
+.arrow-right {
+    color: white;
+    font-size: 40px;
+    position: fixed;
+    margin-left: 1800px;
+    
+    cursor: pointer;  
+}
+
+.arrow-left {
+    color: white;
+    font-size: 40px;
+    position: fixed;
+    display: flex;
+    left: 20px;
+    cursor: pointer;  
+}
+
+.arrow-right:hover{
+    transform: scale(1.15);
+}
+
+.arrow-left:hover{
+    transform: scale(1.15);
+}
+
+
+.recap-photos {
+    display: grid;
+    grid-template-columns: repeat(4,250px);
+    grid-column-gap: 125px;
+    margin-top: 100px;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.recap-photos img {
+    
+    object-fit: cover;
+    width: 300px;
+    height: 300px;
+    padding-bottom: 50px; 
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+}
+
+.recap-photos img:hover {
+    transform: scale(1.07);
+}
+
+.modal {
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;   
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    transition: 0.25s ease-out;
+    
+}
+
+.modal.open {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.full-img {
+    position: absolute;
+    height: 70%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%) scale(0.5);
+    transition: all 0.25s ease-out;
+}
+
+.full-img.open {
+    transform: translate(-50%,-50%) scale(1);
+}
+
+
+  /*********************************Mixes Page************************************/
+
+  .soundcloud {
+    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    top: 75px;
+
+  }
+
+  /*********************************Schedule Page************************************/
+
+  .schedule {
+      display: flex;
+      margin-left: 80px;
+      margin-top: 200px;
+      padding-left: 50px;
+      padding-bottom: 40px;
+  }
+
+
+  .schedule-list a {
+      text-decoration: none;
+      color: white;
+      font-size: 45px;
+  }
+
+  .schedule-list li {
+      list-style: none;
+      margin: 0 0 20px 0;
+  }
+
+/************************************ Responsive ***********************************/
+
+
+@media  screen and (max-width: 1024px) {
+
+
+    
+    
+}
